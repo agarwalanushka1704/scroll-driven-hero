@@ -1,0 +1,607 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #090909;
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 70% 55%,
+            rgba(255, 255, 255, 0.08),
+            transparent 30%
+        ),
+        #090909;
+}
+
+.hero-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 32px 5vw;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.topbar {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand span {
+    color: #c7ff32;
+}
+
+.scroll-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.scroll-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #c7ff32;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+
+    padding-top: 13vh;
+
+    width: 60%;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #888;
+
+    margin-bottom: 22px;
+
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.headline {
+    font-size: clamp(45px, 7vw, 110px);
+    line-height: 0.9;
+    font-weight: 700;
+    letter-spacing: -4px;
+
+    max-width: 850px;
+
+    text-transform: uppercase;
+}
+
+.headline span {
+    display: block;
+
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.headline span:last-child {
+    color: #c7ff32;
+}
+
+.intro {
+    max-width: 390px;
+
+    margin-top: 35px;
+
+    color: #888;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats {
+    display: flex;
+    gap: clamp(25px, 4vw, 70px);
+
+    margin-top: 55px;
+}
+
+.stat {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+.stat-number {
+    font-size: clamp(28px, 3vw, 45px);
+    font-weight: 700;
+
+    letter-spacing: -2px;
+}
+
+.stat-number span {
+    color: #fff;
+}
+
+.stat p {
+    margin-top: 8px;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    color: #707070;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+
+/* =========================================
+   CAR VISUAL
+========================================= */
+
+.visual-area {
+    position: absolute;
+
+    width: 58vw;
+    height: 55vh;
+
+    right: -4vw;
+    bottom: 8vh;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+.car {
+    position: absolute;
+
+    width: min(650px, 55vw);
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 35px 30px rgba(0, 0, 0, 0.65))
+        drop-shadow(0 0 45px rgba(255, 255, 255, 0.08));
+
+    will-change: transform;
+}
+
+
+/* Glow behind car */
+
+.visual-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 300px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(199, 255, 50, 0.08);
+
+    filter: blur(80px);
+}
+
+
+/* Shadow */
+
+.visual-shadow {
+    position: absolute;
+
+    width: 70%;
+    height: 30px;
+
+    bottom: 15%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    filter: blur(18px);
+}
+
+
+/* =========================================
+   SPEED LINES
+========================================= */
+
+.speed-line {
+    position: absolute;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(199, 255, 50, 0.4),
+        transparent
+    );
+
+    opacity: 0.4;
+}
+
+.line-one {
+    width: 350px;
+    top: 20%;
+    right: 5%;
+}
+
+.line-two {
+    width: 500px;
+    top: 42%;
+    right: 10%;
+}
+
+.line-three {
+    width: 280px;
+    top: 65%;
+    right: 0;
+}
+
+
+/* =========================================
+   BOTTOM INDICATOR
+========================================= */
+
+.bottom-indicator {
+    position: absolute;
+
+    bottom: 35px;
+    left: 5vw;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: #666;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.indicator-line {
+    width: 70px;
+    height: 1px;
+
+    background: #333;
+}
+
+
+/* =========================================
+   SECOND SECTION
+========================================= */
+
+.next-section {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 150px 8vw;
+
+    background: #111;
+
+    display: flex;
+    align-items: center;
+}
+
+.section-number {
+    position: absolute;
+
+    top: 70px;
+    right: 8vw;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: #555;
+}
+
+.section-content {
+    max-width: 900px;
+}
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.section-content h2 {
+    font-size: clamp(50px, 7vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+}
+
+.section-content h2 span {
+    color: #c7ff32;
+}
+
+.section-description {
+    max-width: 450px;
+
+    margin-top: 40px;
+
+    color: #777;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.feature-row {
+    display: flex;
+    gap: 70px;
+
+    margin-top: 90px;
+}
+
+.feature {
+    max-width: 180px;
+}
+
+.feature > span {
+    color: #c7ff32;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.feature h3 {
+    margin-top: 15px;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.feature p {
+    margin-top: 10px;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: #666;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 30px 5vw;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: #090909;
+
+    color: #555;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 800px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding-top: 12vh;
+    }
+
+    .headline {
+        font-size: clamp(48px, 11vw, 85px);
+    }
+
+    .intro {
+        max-width: 350px;
+    }
+
+    .stats {
+        gap: 25px;
+        flex-wrap: wrap;
+        max-width: 500px;
+    }
+
+    .stat {
+        width: 100px;
+    }
+
+    .visual-area {
+        width: 100vw;
+        height: 35vh;
+
+        right: -10vw;
+        bottom: 3vh;
+    }
+
+    .car {
+        width: 75vw;
+    }
+
+    .feature-row {
+        gap: 35px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .hero-inner {
+        padding: 25px 6vw;
+    }
+
+    .scroll-label {
+        display: none;
+    }
+
+    .hero-content {
+        padding-top: 10vh;
+    }
+
+    .headline {
+        font-size: 47px;
+        letter-spacing: -2px;
+    }
+
+    .intro {
+        margin-top: 25px;
+        font-size: 12px;
+    }
+
+    .stats {
+        margin-top: 35px;
+        gap: 20px;
+    }
+
+    .stat {
+        width: 80px;
+    }
+
+    .stat-number {
+        font-size: 27px;
+    }
+
+    .stat p {
+        font-size: 8px;
+    }
+
+    .visual-area {
+        bottom: 5vh;
+        right: -15vw;
+    }
+
+    .car {
+        width: 95vw;
+    }
+
+    .bottom-indicator {
+        left: 6vw;
+        bottom: 20px;
+    }
+
+    .next-section {
+        padding: 110px 7vw;
+    }
+
+    .section-content h2 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .feature-row {
+        flex-direction: column;
+        gap: 35px;
+        margin-top: 60px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
